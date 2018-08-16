@@ -1,0 +1,62 @@
+Commands to know
+
+SETTING UP django
+0. download python: python3.6 -m pip install -U pylint
+1. download django: pip3 install django==1.11.7
+2. download an IDE (e.g., Atom, VisualCode Studio, Coda, Anaconda (Navigator), Idle)
+3. create project files (see #1 under TERMINAL)
+4. add an "app":  python3 manage.py startapp adoptions
+5. update settings file with new app information: (INSTALLED_APPS)
+6. download sqlite browser (e.g., http://sqlitebrowser.org/)
+
+
+TERMINAL
+1. django-admin.py startproject wisdomPets:  Calls the method, "startproject" from within django-admin.py and creates a new project by the given name.
+2. django-admin -help shows all available admin methods
+3. python3 manage.py runserver: starts up the django server on your machine
+4. 
+
+
+CONCEPTUAL
+1. App: a set of files with specific features.
+2. apps.py = configuration and initialization
+3. models.py = data layer
+4. admin.py = administrative interface
+5. urls.py = URL routing
+6. views.py = Control layer
+7. tests.py = tests the app
+8. migrations/ = holds migration files
+
+DJAGO MVC SETUP
+
+URL patterns --> views --> templates
+                   |
+                   |
+                 models
+
+MODELS create the data layer of a given django app.
+
+
+FIELD TYPES (to be used in models):  see django documentation
+IntegerField
+DecimalField
+CharField (max_length, null, blank, choices (for limiting choices))
+TextField
+URLField
+BooleanField
+DateTimeField
+ForeignKey
+ManyToMany
+
+
+MIGRATIONS
+contain the instructions on how to change the model (i.e., db) structure over time
+1. need a migration initially
+2.  need a migration when a new field is added
+3. any change to the db structure requires a migration
+migrate: runs all the migrations not yet run
+unapplied migration is a migration file that has been created but not yet runs
+
+for initial migration: python3 manage.py makemigrations
+to see migrations that have occured: python3 manage.py showmigrations
+to apply migrations: python3 manage.py migrate
